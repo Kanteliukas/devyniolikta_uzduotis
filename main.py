@@ -5,6 +5,7 @@ task_window = Tk()
 
 def say_hello():
     user_name = name_row_field.get()
+    history.append(user_name)
     hello = f"Labas, {user_name}!"
     result_row["text"] = hello
     status_row["text"] = "Sukurta"
@@ -16,15 +17,14 @@ def clear_result_row():
 
 
 def revert_changes():
-    hello = f"Neveikia atkūrimas!"
-    result_row["text"] = hello
-    status_row["text"] = "Atkūrimas dar neįgyvendintas"
+    result_row["text"] = history[-1]
+    status_row["text"] = "Atkurta"
 
 
 def close_window():
     task_window.destroy()
 
-
+history = []
 name_row = Label(task_window, text="Įveskite vardą")
 name_row_field = Entry(task_window)
 result_row = Label(task_window, text="")
