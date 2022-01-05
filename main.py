@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk, Label, Entry, Button, Menu, SUNKEN, EW, W, E
 
 task_window = Tk()
 
@@ -46,7 +46,7 @@ name_row.grid(row=0, column=0, sticky=E)
 name_row_field.grid(row=0, column=1)
 button.grid(row=0, column=2)
 result_row.grid(row=1, columnspan=3)
-status_row.grid(row=2, columnspan=3, sticky=S)
+status_row.grid(row=2, columnspan=3, sticky=EW)
 
 task_window.bind("<Return>", lambda event: say_hello())
 task_window.bind("<Escape>", lambda event: close_window())
